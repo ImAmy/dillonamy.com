@@ -1,1 +1,12 @@
+.foreverignore
+
+.gitignore
+.git/**
+
+*.log
+*.md
+
+package.json
+gulpfile.js
+
 public/**
