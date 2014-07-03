@@ -1,4 +1,66 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 1em;
+  color: #7a7a7a;
+  font: 400 1em/1.5 "Josefin Sans", sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font: 400 1em/1 "Clicker Script", sans-serif;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  color: #abeeff;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+p {
+  color: #016;
+  font-weight: bold;
+}
+
+a {
+  color: #7a7a7a;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: 30em) {
+  body {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 80em) and (min-height:48em) {
+  .wedding {
+    background: url(/images/background.jpg) no-repeat 100% 100%;
+    background-size: cover;
+
+    h1 {
+      color: inherit;
+    }
+  }
 }

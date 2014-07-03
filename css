@@ -1,0 +1,9 @@
+#!/bin/bash
+find "$1" -name [^_]*.scss | while read input
+do
+    output=$(echo "${input}" | sed s"@$1@$2@" | sed s/\.scss/\.css/)
+    outputdir=${output%/*}
+    mkdir -p "${outputdir}"
+    sassc -m -t compressed "${input}" "${output}"
+    autoprefixer -m "${output}"
+done

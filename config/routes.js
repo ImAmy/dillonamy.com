@@ -2,7 +2,8 @@
  * Controllers.
  */
 
-var index = require('../app/controllers/index');
+var index   = require('../app/controllers/index'),
+    wedding = require('../app/controllers/wedding');
 
 /**
  * Routes.
@@ -11,4 +12,7 @@ var index = require('../app/controllers/index');
 module.exports = function(app) {
   // index route
   app.use('/', index);
+
+  // wedding route
+  app.use('/wedding', wedding);
 };

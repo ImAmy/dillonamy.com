@@ -2,9 +2,7 @@
  * Module dependencies.
  */
 
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer');
+var gulp = require('gulp');
 
 var paths = {
   css: {
@@ -20,6 +18,7 @@ var paths = {
 gulp.task('css', function() {
   return gulp.src(paths.css.input)
     .pipe(sass({
+      outputStyle: 'compressed',
       sourceComments: 'map',
       sourceMap: 'src',
       errLogToConsole: true
@@ -39,4 +38,4 @@ gulp.task('watch', function() {
   gulp.watch(paths.css.input, ['css']);
 });
 
-gulp.task('default', ['css', 'watch']);
+gulp.task('default', ['css']);

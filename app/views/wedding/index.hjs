@@ -6,8 +6,14 @@
     <link rel='stylesheet' href='/css/global.css'/>
   </head>
   <body class="wedding">
-    <h1>Uh oh! We couldn’t find what you’re looking for...</h1>
-    <h2>404</h2>
-    <p>Our apologies!</p>
+    <h1>Dillon &amp; Amy</h1>
+    <p>Wij heten u welkom op onze bruiloft als {{guest}} (<a href="/wedding/logout">uitloggen</a>)</p>
+    <h2>Locaties:</h2>
+    <ul>
+      {{#locations}}
+      <li><div>{{name}}</div><div>{{address.street}}</div></li>
+      {{/locations}}
+    </ul>
+    <p>Meer info komt in het weekend!</p>
   </body>
 </html>

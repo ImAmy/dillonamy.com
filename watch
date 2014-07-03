@@ -1,0 +1,7 @@
+#!/bin/bash
+while true; do
+    change=$(inotifywait -e close_write,moved_to,create ./public/sass)
+    change=${change#./ * }
+    echo file "${change}" changed, recompiling css!
+    ./css ./public/sass ./public/css
+done
