@@ -1,0 +1,54 @@
+::selection {
+  background: $blue;
+  color: #fff;
+}
+
+html {
+  font: 400 1em/1.5 "Josefin Sans", sans-serif;
+}
+
+body {
+  color: $gray;
+  word-wrap: break-word;
+}
+
+%h {
+  font-family: "Clicker Script", serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  margin: 0 0 #{(2 / 3)}em;
+  font-size: 2.25em;
+  line-height: (4 / 3);
+  @extend %h;
+}
+
+h2 {
+  margin: 0 0 0.75em;
+  font-size: 2em;
+  line-height: 1.5;
+  @extend %h;
+}
+
+p {
+  @extend %baseline;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+
+  &:hover {
+    color: $gray;
+    text-decoration: underline;
+  }
+}
+
+small {
+  font-size: 0.75em;
+}
+big {
+  font-size: 1.25em;
+}

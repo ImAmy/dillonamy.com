@@ -1,0 +1,34 @@
+.events {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+}
+
+.event {
+  margin: 0 0 0.75em;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.event-time {
+  float: left;
+  width: 2.5em;
+  font: 500 1em/1.5 "Alegreya Sans SC", serif;
+  text-align: right;
+}
+
+.event-content {
+  padding: 0 0.5em;
+  border-left: 0.25em solid #fff;
+  margin-left: 3em;
+}
+
+.event-location {
+  font: 400 1em/1.5 "Alegreya Sans SC", serif;
+}

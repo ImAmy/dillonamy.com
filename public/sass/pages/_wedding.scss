@@ -1,0 +1,27 @@
+.wedding {
+  padding: 0.25em 0.25em 12.5%;
+  background: $blue url(/images/bg.png) no-repeat 50% 100%;
+  background-size: 100% auto;
+
+  @include mq(small) {
+    padding: 0.75em 0.5em 12.5%;
+
+    h1 {
+      margin: 0 0 0.5em;
+      font-size: 3em;
+      line-height: 1;
+    }
+  }
+
+  @include mq(medium) {
+    font-size: 1.25em;
+  }
+
+  @include mq(large) {
+    max-width: 50em;
+    padding: 0.75em 1em 9em;
+    border-radius: 0.75em;
+    margin: 0.75em auto;
+    font-size: 1.5em;
+  }
+}

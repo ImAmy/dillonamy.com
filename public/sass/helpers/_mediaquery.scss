@@ -1,0 +1,15 @@
+@mixin mq($point) {
+  @if $point == small {
+    $point: $mq-small;
+  }
+  @else if $point == medium {
+    $point: $mq-medium;
+  }
+  @else if $point == large {
+    $point: $mq-large;
+  }
+
+  @media screen and (min-width: $point)  {
+    @content;
+  }
+}

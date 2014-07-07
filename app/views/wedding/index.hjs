@@ -2,18 +2,28 @@
 <html>
   <head>
     <title>Onze Bruiloft! — Dillon &amp; Amy</title>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500|Josefin+Sans:400,600|Clicker+Script'/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Clicker+Script|Josefin+Sans|Alegreya+Sans+SC:400,500'/>
     <link rel='stylesheet' href='/css/global.css'/>
   </head>
-  <body class="wedding">
-    <h1>Dillon &amp; Amy</h1>
-    <p>Wij heten u welkom op onze bruiloft als {{guest}} (<a href="/wedding/logout">uitloggen</a>)</p>
-    <h2>Locaties:</h2>
-    <ul>
-      {{#locations}}
-      <li><div>{{name}}</div><div>{{address.street}}</div></li>
-      {{/locations}}
-    </ul>
-    <p>Meer info komt in het weekend!</p>
+  <body>
+    <div class="wedding">
+      <h1>Dillon &amp; Amy</h1>
+      <p>Wij heten u welkom op onze bruiloft als {{guest}} <small>(<a href="/wedding/logout">uitloggen</a>)</small></p>
+
+      <section class="events">
+        <h2>Dagoverzicht</h2>
+        <ul>
+          {{#events}}
+          <li class="event">
+            <div class="event-time">{{time}}</div>
+            <div class="event-content">
+              <div>{{name}}</div>
+              {{#location}}<div class="event-location">{{location}}</div>{{/location}}
+            </div>
+          </li>
+          {{/events}}
+        </ul>
+      </section>
+    </div>
   </body>
 </html>

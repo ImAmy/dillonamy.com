@@ -3,9 +3,7 @@
  */
 
 var express      = require('express'),
-    mongoose     = require('mongoose'),
     path         = require('path'),
-    fs           = require('fs'),
     //favicon    = require('serve-favicon'),
     logger       = require('morgan'),
     bodyParser   = require('body-parser'),
@@ -17,28 +15,6 @@ var express      = require('express'),
 
 var app = express(),
     config = require('./config/config')[app.get('env')];
-
-// mongoose db connection
-function connect() {
-  mongoose.connect(config.db, {
-    server: { socketOptions: { keepAlive: 1 } }
-  });
-}
-connect();
-mongoose.connection.on('error', function(err) {
-  console.error('Mongoose error: ', err);
-});
-mongoose.connection.on('disconnected', function() {
-  console.log('Mongoose disconnected... reconnecting!');
-  connect();
-});
-
-// bootstrap models
-var models = path.join(__dirname, 'app', 'models');
-fs.readdirSync(models).forEach(function(file) {
-  if (~file.indexOf('.js'))
-    require(path.join(models, file));
-});
 
 // express setup
 app.set('port', config.port);
